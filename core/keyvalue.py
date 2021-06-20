@@ -9,7 +9,7 @@ class KeyValueStorage:
 
     def put(self,key,value):
         """
-            put value in given key if length less than length of block
+            put value for given key in list if length less than length of block
             else put in trie
         """
 
