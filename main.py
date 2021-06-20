@@ -1,7 +1,10 @@
-
+from core.keyvalue import KeyValueStorage
+from core.trie import TrieNode
 
 if __name__ == "__main__":
 
+    key_value_storage = KeyValueStorage(10,TrieNode("*"))
+    
     while True:
         print("1. Insert \n")
         print("2. Retrive \n")
@@ -14,7 +17,11 @@ if __name__ == "__main__":
                 key = int(input())
                 print("\nEnter value: ")
                 value = input()
-                print(key,value)
+                key_value_storage.put(key,value)
+            elif choice ==2:
+                print("\nEnter key: ")
+                key = int(input())
+                print("Retrieved value: ", key_value_storage.get(key))
 
         except ValueError:
             print("Enter Valid Input \n")

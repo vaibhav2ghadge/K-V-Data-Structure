@@ -11,24 +11,24 @@ class TrieNode(object):
         self.value = None
     
 
-    def add(self,key,value):
+    def add(self,root,key,value):
         """
         Add value in trie
         In each trie node check the given key  present
         if its not present then create the object do same for remaining key
         and store metadata at end of key object
         """
-        node = None
+        node = root
         for digit in key:
-            child = self.children[ord(digit)-ord('0')]
+            child = node.children[ord(digit)-ord('0')]
             if(child==None):
-                self.children[ord(digit)-ord('0')] = TrieNode(digit)
-            node = self.children[ord(digit)-ord('0')]
+                node.children[ord(digit)-ord('0')] = TrieNode(digit)
+            node = node.children[ord(digit)-ord('0')]
         
         node.value = ValueMetaDataNode(value)
 
 
-    def get(root,key):
+    def get(self,root,key):
         """
             return the value for key
         """
