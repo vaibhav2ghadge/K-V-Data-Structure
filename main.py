@@ -6,7 +6,7 @@ if __name__ == "__main__":
     key_value_storage = KeyValueStorage(10,TrieNode("*"))
     
     while True:
-        print("1. Insert \n")
+        print("\n1. Insert \n")
         print("2. Retrive \n")
         print("3. Display current state \n")
         print("Choice (^C to exit): ")
@@ -18,10 +18,16 @@ if __name__ == "__main__":
                 print("\nEnter value: ")
                 value = input()
                 key_value_storage.put(key,value)
+
             elif choice ==2:
                 print("\nEnter key: ")
                 key = int(input())
-                print("Retrieved value: ", key_value_storage.get(key))
+                print("Retrieved value: " + str(key_value_storage.get(key)))
+            
+            elif choice==3:
+                result = key_value_storage.getAllKeyValues()
+                for pair in result:
+                    print("<"+str(pair[0])+" "+pair[1]+">")
 
         except ValueError:
             print("Enter Valid Input \n")

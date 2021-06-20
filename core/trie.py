@@ -39,3 +39,25 @@ class TrieNode(object):
                 return None
         return node.value.value
 
+    def getAllKeyValuePair(self,root,key):
+        """
+            Return list of key value pair recursively
+            return [(key,value)]
+        """
+
+        if root==None:
+            return []
+        
+        node = root
+        result = []
+
+        for index,child in enumerate(node.children):
+            if(child!=None):
+                if(child.value!=None):
+                    result.append((key+str(index),child.value.value))
+                
+                result += self.getAllKeyValuePair(child,key+str(index))
+
+        return result
+
+        

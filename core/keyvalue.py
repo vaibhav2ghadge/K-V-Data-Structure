@@ -34,3 +34,35 @@ class KeyValueStorage:
         else:
             return self.trie.get(self.trie,str(key))
 
+    def getAllKeyValues(self):
+        """
+            get value from list block and trie and merge. 
+            return as [(key,value)]
+        """
+        result_blocks = self.getAllKeyValueFromBlock()
+        result_trie = self.getAllKeyValueFromTrie()
+        
+        return result_blocks+result_trie
+
+
+    def getAllKeyValueFromBlock(self):
+        """
+            get key value from block
+            return as [(key,value)]
+        """
+        result =[]
+        for key,value in enumerate(self.blocks):
+            if value!=None:
+                result.append((key,value.value))
+        return result
+
+    def getAllKeyValueFromTrie(self):
+        """
+            get key value from trie
+            return as [(key,value)]
+        """
+
+        return self.trie.getAllKeyValuePair(self.trie,"")
+
+        
+
