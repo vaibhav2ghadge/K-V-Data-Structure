@@ -10,5 +10,7 @@ by this we can get most of the keys in O(1) and the remaining keys can we get in
 
 ## How To Run / Installation
 - Make sure you have python2.7 installed
-- ``````
+- ``` cd K-V-Data-Structure/ ```
+- ```make run  ``` for run program
+-  Another way is to run program ``` python2.7 main.py 100000 ```
 
