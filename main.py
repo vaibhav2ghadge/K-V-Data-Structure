@@ -1,9 +1,12 @@
 from core.keyvalue import KeyValueStorage
 from core.trie import TrieNode
+import sys
 
-if __name__ == "__main__":
-
-    key_value_storage = KeyValueStorage(10,TrieNode("*"))
+def processUserInputs(no_of_nodes):
+    """
+    Read user input and pass it to approprate keyvaluestorage function
+    """
+    key_value_storage = KeyValueStorage(no_of_nodes,TrieNode("*"))
     
     while True:
         print("\n1. Insert \n")
@@ -16,7 +19,7 @@ if __name__ == "__main__":
                 print("Enter key: ")
                 key = int(input())
                 print("\nEnter value: ")
-                value = input()
+                value = str(input())
                 key_value_storage.put(key,value)
 
             elif choice ==2:
@@ -37,5 +40,13 @@ if __name__ == "__main__":
         except NameError:
             print("Enter key in numeric form and value in double quotes example key = 100, value =\"Apple\" ")
 
+
+if __name__ == "__main__":
+   
+    if(len(sys.argv)<2):
+        print("Enter command line argumment for number of blocks in list")
+        sys.exit(1)
+    processUserInputs(int(sys.argv[1]))
+    
 
 
