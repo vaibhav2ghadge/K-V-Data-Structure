@@ -28,6 +28,8 @@ if __name__ == "__main__":
                 result = key_value_storage.getAllKeyValues()
                 for pair in result:
                     print("<"+str(pair[0])+" "+pair[1]+">")
+            else:
+                print("Wrong choice")
 
         except ValueError:
             print("Enter Valid Input \n")
