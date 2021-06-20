@@ -16,4 +16,5 @@ by this we can get **most of the keys in O(1)** and the remaining keys can we ge
 - ``` cd K-V-Data-Structure/ ```
 - ```make run  ``` for run program
 -  Another way is to run program ``` python2.7 main.py 100000 ```
+-- for insert always enter **key in numeric form like 1232 and value be in double quotes like  "Mango"**
 
